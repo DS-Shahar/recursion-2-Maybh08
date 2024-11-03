@@ -1,0 +1,40 @@
+public class p27 {
+        public static int ex14(int[] arr, int n) {
+            if (n == 0) {
+                return arr[0];
+            }
+            return arr[n] + ex14(arr, n - 1);
+        }
+
+    public static int ex15(int[] arr, int i) {
+        if (i < 0) {
+            return 0;
+        }
+        if (arr[i] >= 0) {
+            return 1 + ex15(arr, i - 1);
+        }
+        else
+            return ex15(arr, i - 1);
+    }
+
+    public static int ex16(int[] arr, int num, int i) {
+        if (i >= arr.length) {
+            return -1;
+        }
+        if (arr[i] == num) {
+            return i;
+        }
+        return ex16(arr, num, i + 1);
+    }
+
+    public static boolean ex17(int[] arr, int i) {
+        if (i >= arr.length - 1) {
+            return true;
+        }
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+        return ex17(arr, i + 1);
+    }
+
+}
